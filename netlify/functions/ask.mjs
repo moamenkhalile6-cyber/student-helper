@@ -80,7 +80,7 @@ export default async (req) => {
 
   } catch (error) {
     return Response.json(
-      { error: "حدث خطأ، حاول مرة ثانية." },
+{ error: error.message || "حدث خطأ غير معروف." },
       { status: 500 }
     );
   }
