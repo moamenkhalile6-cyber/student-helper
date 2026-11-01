@@ -1,51 +1,170 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Student Helper | مساعدك الدراسي</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f5f7fc;color:#17233e;font-family:Arial,Tahoma,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:#f5f7fc;color:#17233e;font-family:Arial,Tahoma,sans-serif}
 header{height:68px;background:#fff;border-bottom:1px solid #e6ebf5;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
-.brand{direction:ltr;font-weight:800;font-size:22px}.brand span{color:#3972e8}.topnote{color:#687895;font-size:14px}
+.brand{direction:ltr;font-weight:800;font-size:22px}
+.brand span{color:#3972e8}
+.topnote{color:#687895;font-size:14px}
 .layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 68px)}
-aside{background:#101d36;color:#dce8ff;padding:25px 16px}.brandmark{font-size:22px;font-weight:bold;direction:ltr;text-align:center;margin:4px 0 35px}.brandmark span{color:#72a8ff}
-nav a{display:block;color:#dce8ff;text-decoration:none;padding:14px 12px;border-radius:10px;margin:5px 0;font-size:15px}nav a.active,nav a:hover{background:#20385f}
+aside{background:#101d36;color:#dce8ff;padding:25px 16px}
+.brandmark{font-size:22px;font-weight:bold;direction:ltr;text-align:center;margin:4px 0 35px}
+.brandmark span{color:#72a8ff}
+nav a{display:block;color:#dce8ff;text-decoration:none;padding:14px 12px;border-radius:10px;margin:5px 0;font-size:15px}
+nav a.active,nav a:hover{background:#20385f}
 .asidefoot{font-size:13px;color:#9db7e7;line-height:1.8;margin:45px 8px 0}
 main{max-width:1120px;width:100%;margin:0 auto;padding:34px 28px}
 .hero{text-align:center;padding:28px 15px 30px;background:linear-gradient(120deg,#eaf1ff,#fff 55%,#edf5ff);border:1px solid #e2eaff;border-radius:20px}
-.cap{font-size:38px}.hero h1{font-size:34px;margin:8px 0}.hero h1 span{color:#3972e8}.hero p{color:#5e6f8e;line-height:1.8;margin:8px auto;max-width:650px}
+.cap{font-size:38px}
+.hero h1{font-size:34px;margin:8px 0}
+.hero h1 span{color:#3972e8}
+.hero p{color:#5e6f8e;line-height:1.8;margin:8px auto;max-width:650px}
 .chat{background:#fff;border:1px solid #dce5f5;border-radius:18px;padding:17px;margin:24px 0 18px;box-shadow:0 8px 25px #17233e0a}
 textarea{width:100%;min-height:105px;border:0;outline:0;resize:vertical;font:16px Arial;color:#17233e;padding:8px;background:transparent}
 .chatbottom{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 input[type=file]{max-width:210px;font-size:13px;color:#687895}
 button{border:0;border-radius:11px;padding:12px 18px;background:#3972e8;color:white;font-size:15px;cursor:pointer}
-button.secondary{background:#eef3ff;color:#2859bd}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
 .card{background:white;border:1px solid #e3e9f4;border-radius:16px;padding:18px 15px;text-align:center;cursor:pointer;transition:.15s}
-.card:hover{transform:translateY(-2px);border-color:#a9c2fa}.icon{font-size:27px}.card h3{font-size:17px;margin:12px 0 8px}.card p{font-size:13px;line-height:1.7;color:#6b7892;margin:0}
+.card:hover{transform:translateY(-2px);border-color:#a9c2fa}
+.icon{font-size:27px}
+.card h3{font-size:17px;margin:12px 0 8px}
+.card p{font-size:13px;line-height:1.7;color:#6b7892;margin:0}
 #answer{display:none;background:#fff;border:1px solid #dce5f5;border-radius:15px;padding:18px;margin-top:16px;line-height:1.9;white-space:pre-wrap}
 .notice{color:#78859d;font-size:12px;text-align:center;line-height:1.7;margin:20px 0}
-@media(max-width:800px){.layout{grid-template-columns:1fr}aside{display:none}main{padding:20px 14px}.grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:27px}}
-@media(max-width:390px){.grid{grid-template-columns:1fr}}
-</style></head>
+@media(max-width:800px){
+.layout{grid-template-columns:1fr}
+aside{display:none}
+main{padding:20px 14px}
+.grid{grid-template-columns:repeat(2,1fr)}
+.hero h1{font-size:27px}
+}
+@media(max-width:390px){
+.grid{grid-template-columns:1fr}
+}
+</style>
+</head>
 <body>
-<header><div class="brand">Student <span>Helper</span></div><div class="topnote">مساعدك الدراسي الذكي</div></header>
+<header>
+<div class="brand">Student <span>Helper</span></div>
+<div class="topnote">مساعدك الدراسي الذكي</div>
+</header>
+
 <div class="layout">
-<aside><div class="brandmark">🎓 Student<br><span>Helper</span></div>
-<nav><a class="active" href="#">⌂　الرئيسية</a><a href="#services">▤　حل الواجبات</a><a href="#services">☷　تلخيص النصوص</a><a href="#services">✎　الكتابة والإبداع</a><a href="#services">文　الترجمة</a><a href="#services">♧　شرح الدروس</a></nav>
-<div class="asidefoot">معك في كل خطوة<br>نحو مستقبل أفضل 🎓</div></aside>
+<aside>
+<div class="brandmark">Student<br><span>Helper</span></div>
+<nav>
+<a class="active" href="#">⌂　الرئيسية</a>
+<a href="#services">▤　حل الواجبات</a>
+<a href="#services">☷　تلخيص النصوص</a>
+<a href="#services">✎　الكتابة والإبداع</a>
+<a href="#services">文　الترجمة</a>
+<a href="#services">♧　شرح الدروس</a>
+</nav>
+<div class="asidefoot">معك في كل خطوة<br>نحو مستقبل أفضل</div>
+</aside>
+
 <main>
-<section class="hero"><div class="cap">🎓</div><h1>Student <span>Helper</span></h1><p><b>مساعدك الذكي في رحلتك الدراسية</b><br>نساعدك في فهم الدروس، تلخيص النصوص، تحسين كتابتك، والتدرّب على حل الأسئلة.</p></section>
-<section class="chat"><textarea id="q" placeholder="اكتب سؤالك أو الصق النص هنا..."></textarea><div class="chatbottom"><input id="photo" type="file" accept="image/*" aria-label="ارفع صورة السؤال"><button onclick="ask('اشرح لي')">إرسال السؤال ←</button></div></section>
-<section class="grid" id="services">
-<div class="card" onclick="ask('ساعدني في حل الواجب')"><div class="icon">📘</div><h3>حل الواجبات</h3><p>افهم السؤال وخطوات الحل بالتدريج.</p></div>
-<div class="card" onclick="ask('لخّص النص')"><div class="icon">📝</div><h3>تلخيص النصوص</h3><p>ملخصات واضحة تساعدك بالمراجعة.</p></div>
-<div class="card" onclick="ask('حسّن كتابتي')"><div class="icon">✍️</div><h3>الكتابة والإبداع</h3><p>أفكار وصياغة وتدقيق لغوي.</p></div>
-<div class="card" onclick="ask('ترجم النص')"><div class="icon">🌐</div><h3>الترجمة</h3><p>ترجمة بين العربية والإنجليزية والعبرية.</p></div>
+<section class="hero">
+<div class="cap">🎓</div>
+<h1>Student <span>Helper</span></h1>
+<p>
+<b>مساعدك الذكي في رحلتك الدراسية</b><br>
+نساعدك في فهم الدروس، تلخيص النصوص، تحسين كتابتك، والتدرّب على حل الأسئلة.
+</p>
 </section>
+
+<section class="chat">
+<textarea id="q" placeholder="اكتب سؤالك أو الصق النص هنا..."></textarea>
+<div class="chatbottom">
+<input id="photo" type="file" accept="image/*" aria-label="ارفع صورة السؤال">
+<button onclick="ask('اشرح لي')">إرسال السؤال ←</button>
+</div>
+</section>
+
+<section class="grid" id="services">
+<div class="card" onclick="ask('ساعدني في حل الواجب')">
+<div class="icon">📘</div>
+<h3>حل الواجبات</h3>
+<p>افهم السؤال وخطوات الحل بالتدريج.</p>
+</div>
+<div class="card" onclick="ask('لخّص النص')">
+<div class="icon">📝</div>
+<h3>تلخيص النصوص</h3>
+<p>ملخصات واضحة تساعدك بالمراجعة.</p>
+</div>
+<div class="card" onclick="ask('حسّن كتابتي')">
+<div class="icon">✍️</div>
+<h3>الكتابة والإبداع</h3>
+<p>أفكار وصياغة وتدقيق لغوي.</p>
+</div>
+<div class="card" onclick="ask('ترجم النص')">
+<div class="icon">🌐</div>
+<h3>الترجمة</h3>
+<p>ترجمة بين العربية والإنجليزية والعبرية.</p>
+</div>
+</section>
+
 <div id="answer"></div>
-<p class="notice">هذه نسخة تصميم تجريبية. إرسال الأسئلة ورفع الصور ظاهران للتجربة، لكن يلزم ربط خدمة ذكاء اصطناعي وبرمجة الخادم قبل تقديم إجابات فعلية أو حفظ بيانات الطلاب.</p>
-</main></div>
+<p class="notice">يمكنك كتابة سؤالك أو رفع صورة للحصول على المساعدة الدراسية.</p>
+</main>
+</div>
+
 <script>
-function ask(action){const q=document.getElementById('q').value.trim();const file=document.getElementById('photo').files[0];const box=document.getElementById('answer');box.style.display='block';if(!q&&!file){box.textContent='اكتب سؤالك أو اختر صورة أولاً.';return;}box.textContent='تم اختيار خدمة: '+action+'.\\nهذه نسخة واجهة تجريبية وليست متصلة بعد بالذكاء الاصطناعي. الخطوة التالية هي ربطها بمحرك إجابات حقيقي حتى تتمكن من تحليل السؤال أو الصورة.';box.scrollIntoView({behavior:'smooth',block:'nearest'});}
-</script></body></html>
+async function ask(action) {
+  const q = document.getElementById('q').value.trim();
+  const file = document.getElementById('photo').files[0];
+  const box = document.getElementById('answer');
+
+  if (!q && !file) {
+    box.style.display = 'block';
+    box.textContent = 'اكتب سؤالك أو اختر صورة أولاً.';
+    return;
+  }
+
+  box.style.display = 'block';
+  box.textContent = 'جاري التفكير والإجابة...';
+
+  try {
+    let image = null;
+
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        throw new Error('حجم الصورة أكبر من 5 ميغابايت.');
+      }
+
+      image = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    const response = await fetch('/.netlify/functions/ask', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({question: q, action, image})
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || 'حدث خطأ في الاتصال.');
+    }
+
+    box.textContent = data.answer || 'لم يصل جواب.';
+  } catch (error) {
+    box.textContent = 'عذراً: ' + error.message;
+  }
+
+  box.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+</script>
+</body>
+</html>
