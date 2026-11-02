@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#142544">
+<meta name="description" content="Student Helper - مساعدك الدراسي">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+<title>Student Helper</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f7fc;color:#17233e;font-family:Arial,Tahoma,sans-serif}
+header{background:#fff;padding:18px 22px;border-bottom:1px solid #e6ebf5;display:flex;justify-content:space-between;align-items:center}
+.brand{direction:ltr;font-weight:800;font-size:22px}.brand span{color:#3972e8}
+main{max-width:850px;margin:32px auto;padding:0 16px}
+.hero{text-align:center;background:linear-gradient(120deg,#eaf1ff,#fff);border:1px solid #e2eaff;border-radius:20px;padding:30px 18px}
+.hero h1{font-size:32px;margin:8px}.hero h1 span{color:#3972e8}.hero p{line-height:1.8;color:#5e6f8e}
+.panel{background:white;border:1px solid #dce5f5;border-radius:18px;padding:16px;margin:20px 0}
+textarea{width:100%;min-height:120px;border:1px solid #dce5f5;border-radius:12px;padding:14px;font:16px Arial;resize:vertical}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+button{border:0;border-radius:11px;padding:12px 17px;background:#3972e8;color:white;font-size:15px;cursor:pointer}
+.secondary{background:#eef3ff;color:#2859bd}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:#fff;border:1px solid #e3e9f4;border-radius:15px;padding:17px;text-align:center}
+.card b{display:block;margin:8px}.card small{color:#6b7892;line-height:1.6}
+#result{display:none;background:#fff;border:1px solid #dce5f5;padding:16px;border-radius:14px;margin-top:14px;line-height:1.8}
+footer{text-align:center;color:#7b879e;font-size:12px;margin:22px}
+@media(max-width:520px){main{margin:18px auto}.hero h1{font-size:26px}.cards{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header><div class="brand">Student <span>Helper</span></div><button id="install" class="secondary" hidden>ثبّت التطبيق</button></header>
+<main>
+<section class="hero"><div style="font-size:38px">🎓</div><h1>Student <span>Helper</span></h1><p>مساعدك الدراسي: اسأل، تعلّم، لخّص، وطوّر كتابتك خطوة بخطوة.</p></section>
+<section class="panel"><textarea id="q" placeholder="اكتب سؤالك أو الصق النص هنا..."></textarea><div class="row"><button onclick="demo('شرح السؤال')">اشرح لي</button><button class="secondary" onclick="demo('تلخيص النص')">لخّص النص</button><button class="secondary" onclick="demo('تحسين الكتابة')">حسّن كتابتي</button></div><div id="result"></div></section>
+<section class="cards">
+<div class="card">📘<b>حل الواجبات</b><small>فهم الأسئلة وخطوات الحل.</small></div>
+<div class="card">📝<b>تلخيص النصوص</b><small>ملخصات للمراجعة والدراسة.</small></div>
+<div class="card">✍️<b>الكتابة والإبداع</b><small>أفكار وصياغة وتدقيق.</small></div>
+<div class="card">🌐<b>الترجمة</b><small>العربية والإنجليزية والعبرية.</small></div>
+</section>
+<p style="font-size:12px;color:#78859d;line-height:1.7">هذه نسخة تجريبية قابلة للتثبيت بعد نشرها على رابط آمن HTTPS. الأزرار حالياً للعرض فقط؛ ربط الذكاء الاصطناعي يحتاج إعداد خدمة خلفية ومفتاح API بشكل آمن.</p>
+</main><footer>Student Helper © 2026</footer>
+<script>
+function demo(label){const q=document.getElementById('q').value.trim(),r=document.getElementById('result');r.style.display='block';r.textContent=q?'اخترت خدمة '+label+'. هذه نسخة تجريبية؛ سنربطها لاحقاً بذكاء اصطناعي ليعالج سؤالك فعلياً.':'اكتب السؤال أو النص أولاً.'}
+let promptEvent;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();promptEvent=e;document.getElementById('install').hidden=false});
+document.getElementById('install').addEventListener('click',async()=>{if(promptEvent){promptEvent.prompt();await promptEvent.userChoice;promptEvent=null;}});
+if('serviceWorker' in navigator && location.protocol.startsWith('http')){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+</script></body></html>
